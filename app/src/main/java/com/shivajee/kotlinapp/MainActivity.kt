@@ -9,6 +9,7 @@ import android.widget.Toast
 import kotlin.random.Random
 
 class MainActivity : AppCompatActivity() {
+    lateinit var  DiceImage : ImageView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -18,12 +19,12 @@ class MainActivity : AppCompatActivity() {
             RollDie()
             Toast.makeText(this, "Rolled The Die", Toast.LENGTH_SHORT).show()
         }
+        val DiceImage : ImageView = findViewById(R.id.image_view)
         
         
     }
 
     private fun RollDie() {
-        val DiceImage : ImageView = findViewById(R.id.image_view)
         //        count = count + 1
 //        ResultText.text = "Die Rolled"
         val DrawableResource = when(Random.nextInt(1, 7)) {
